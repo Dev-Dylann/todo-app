@@ -10,3 +10,17 @@ body {
 html {
   height: -webkit-fill-available
 }
+
+@layer components {
+  .listitem {
+    @apply grid p-4 border-b grid-cols-10 gap-1
+  }
+
+  .checkbox {
+    @apply col-span-1 h-8 accent-blue-600
+  }
+
+  .list-content {
+    @apply col-span-8 ml-3
+  }
+}

@@ -12,54 +12,48 @@
       href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/8d9ba8ddc1.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body class="font-ubuntu bg-coolGray dark:bg-spaceGray dark:text-white">
     <main class="flex flex-col gap-4 p-4">
       <section class="bg-coolGray-dark dark:bg-spaceGray-light p-4 rounded-lg">
-        <form action="" class="flex gap-2">
-          <label for="newItem" class="flex flex-col gap-1 text-sm grow">
+        <form action="" id="new-item-form" class="flex gap-2">
+          <label for="new-item-input" class="flex flex-col gap-1 text-sm grow">
             Add new to-do item
             <input
               type="text"
-              id="newItem"
+              id="new-item-input"
               class="rounded-lg py-1 px-4 text-base outline outline-1 outline-black dark:outline-white dark:bg-transparent focus:outline-2"
             />
           </label>
 
           <button
+            id="new-item-button"
             type="submit"
-            class="self-end grid place-content-center p-1 px-2 rounded-lg bg-blue-600 text-white"
+            class="self-end grid place-content-center p-2 rounded-lg bg-blue-600 text-white"
           >
-            Add
+            <i class="fa-solid fa-plus" style="color: #ffffff"></i>
           </button>
         </form>
       </section>
 
-      <h2 class="text-lg font-medium mt-4">To-Do List</h2>
+      <section class="mt-4 flex justify-between items-center">
+        <h2 class="text-lg font-medium">To-Do List</h2>
+
+        <button
+          id="clear-list"
+          type="button"
+          class="py-1 px-4 ring-1 ring-crimson-imperial rounded-lg text-sm"
+        >
+          Clear All
+        </button>
+      </section>
 
       <section class="p-4 bg-coolGray-dark dark:bg-spaceGray-light rounded-lg">
-        <ul class="flex flex-col">
-          <li class="p-4 border-b dark:border-[#333] grid grid-cols-10 gap-1">
-            <input
-              type="checkbox"
-              class="peer col-span-1 h-8 accent-blue-600"
-            />
-            <p class="col-span-9 ml-3 peer-checked:line-through">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo a
-              fuga minus in consequatur necessitatibus
-            </p>
-          </li>
-
-          <li class="p-4 border-b dark:border-[#333] grid grid-cols-10 gap-1">
-            <input type="checkbox" class="col-span-1 h-8" />
-            <p class="col-span-9 ml-3">Some random shit I plan to do</p>
-          </li>
-
-          <li class="p-4 border-b dark:border-[#333] grid grid-cols-10 gap-1">
-            <input type="checkbox" class="col-span-1 h-8" />
-            <p class="col-span-9 ml-3">Fall in love or something idk</p>
-          </li>
-        </ul>
+        <ul id="item-list" class="flex flex-col"></ul>
       </section>
     </main>
   </body>
